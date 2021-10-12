@@ -39,6 +39,14 @@ const Book: React.FC<PROPS> = function (props: PROPS) {
         }
     };
 
+    const translated = function () {
+        if (!props.data.isTranslated) {
+            return;
+        } else {
+            return <li>{`Translator: ${props.data.secondAuth}`}</li>;
+        }
+    };
+
     return (
         <div className="book-box">
             <h2 className="book-title">{props.data.title}</h2>
@@ -46,10 +54,10 @@ const Book: React.FC<PROPS> = function (props: PROPS) {
                 <div className="book-info-box">
                     <ul>
                         <li>Author: {props.data.author}</li>
+                        {translated()}
                         <li>Publisher: {props.data.publisher}</li>
                         <li>Date Published: {props.data.datePub}</li>
                         <li>Date First Published: {props.data.dateWrit}</li>
-                        <li>Price: {props.data.price}</li>
                     </ul>
                 </div>
                 <div className="book-image">{renderImage()}</div>

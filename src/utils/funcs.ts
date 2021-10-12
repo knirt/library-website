@@ -35,8 +35,22 @@ const checkAuth = function (auth: string, keyword: string): boolean {
     const authArr = author.split(" ");
 
     //now compare all elements of split array with keyword
-    const word = keyword.toLowerCase();
-    return authArr.some((item) => item === word);
+    const word = keyword.toLowerCase().split(" ");
+    return authArr.some((item) => {
+        let matches = [];
+        for (let i = 0; i < word.length; i++) {
+            if (word[i] === item) {
+                matches.push(word[i]);
+            } else {
+                continue;
+            }
+        }
+        if (matches.length !== 0) {
+            return true;
+        } else {
+            return false;
+        }
+    });
 };
 
 //same as above but this time for title, also returns bool
@@ -48,9 +62,23 @@ const checkTitle = function (title: string, keyword: string): boolean {
         return item !== "the" || "a" || "of" || "as" || "and" || "or" || "is" || "are" || "for";
     });
 
-    const word = keyword.toLowerCase();
+    const word = keyword.toLowerCase().split(" ");
 
-    return titleArr.some((item) => item === word);
+    return titleArr.some((item) => {
+        let matches = [];
+        for (let i = 0; i < word.length; i++) {
+            if (word[i] === item) {
+                matches.push(word[i]);
+            } else {
+                continue;
+            }
+        }
+        if (matches.length !== 0) {
+            return true;
+        } else {
+            return false;
+        }
+    });
 };
 
 //function to perform search by keyword in shopReducer for filter functionality
