@@ -63,7 +63,15 @@ const Book: React.FC<PROPS> = function (props: PROPS) {
                 <div className="book-image">{renderImage()}</div>
             </div>
             <div className="book-box-foot">
-                <button className="book-box-btn book-wiki-btn">See wiki</button>
+                <a
+                    href={props.data.wikiLink}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <button className="book-box-btn book-wiki-btn">
+                        See wiki
+                    </button>
+                </a>
                 <button
                     onClick={props.inCart ? removeBookFromCart : addBookToCart}
                     className="book-box-btn book-cart-btn"

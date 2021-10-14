@@ -29,7 +29,8 @@ type BOOK_FACTORY = (
     price: number,
     isTranslated: boolean,
     imageReference: any,
-    tags: string[]
+    tags: string[],
+    wikiLink: string
 ) => BOOK;
 
 type BOOKS = Array<BOOK>;
@@ -54,7 +55,8 @@ const BookFactory: BOOK_FACTORY = function (
     price,
     isTranslated,
     imageReference,
-    tags
+    tags,
+    wikiLink
 ) {
     bookIDs.push(id);
 
@@ -71,6 +73,7 @@ const BookFactory: BOOK_FACTORY = function (
         imageRef: imageReference,
         inCart: false,
         tags,
+        wikiLink,
     };
 };
 
@@ -87,7 +90,8 @@ const Books: BOOKS = [
         20,
         true,
         aristotleImg,
-        [Tags.META]
+        [Tags.META],
+        "https://en.wikipedia.org/wiki/Metaphysics_(Aristotle)"
     ),
 
     BookFactory(
@@ -101,7 +105,8 @@ const Books: BOOKS = [
         20,
         true,
         worldAsWillImg,
-        [Tags.META, Tags.EPIS]
+        [Tags.META, Tags.EPIS],
+        "https://en.wikipedia.org/wiki/The_World_as_Will_and_Representation"
     ),
 
     BookFactory(
@@ -115,7 +120,8 @@ const Books: BOOKS = [
         15,
         true,
         birthOfTragImg,
-        [Tags.ETHICS, Tags.PSYCH]
+        [Tags.ETHICS, Tags.PSYCH],
+        "https://en.wikipedia.org/wiki/The_Birth_of_Tragedy"
     ),
 
     BookFactory(
@@ -129,7 +135,8 @@ const Books: BOOKS = [
         30,
         true,
         illiadImg,
-        [Tags.LIT]
+        [Tags.LIT],
+        "https://en.wikipedia.org/wiki/Iliad"
     ),
 
     BookFactory(
@@ -143,7 +150,8 @@ const Books: BOOKS = [
         15,
         true,
         gravityImg,
-        [Tags.MYSTICISM, Tags.THEOLOGY]
+        [Tags.MYSTICISM, Tags.THEOLOGY],
+        "https://en.wikipedia.org/wiki/Simone_Weil#Mysticism_in_Gravity_and_Grace"
     ),
 
     BookFactory(
@@ -157,7 +165,8 @@ const Books: BOOKS = [
         10,
         false,
         lewisImg,
-        [Tags.EPIS, Tags.ETHICS]
+        [Tags.EPIS, Tags.ETHICS],
+        "https://en.wikipedia.org/wiki/The_Abolition_of_Man"
     ),
 
     BookFactory(
@@ -171,7 +180,8 @@ const Books: BOOKS = [
         25,
         true,
         beyondGoodImg,
-        [Tags.PSYCH, Tags.ETHICS, Tags.EPIS]
+        [Tags.PSYCH, Tags.ETHICS, Tags.EPIS],
+        "https://en.wikipedia.org/wiki/Beyond_Good_and_Evil"
     ),
 
     BookFactory(
@@ -185,7 +195,8 @@ const Books: BOOKS = [
         30,
         false,
         arendtImg,
-        [Tags.POLITICS]
+        [Tags.POLITICS],
+        "https://en.wikipedia.org/wiki/The_Origins_of_Totalitarianism"
     ),
 
     BookFactory(
@@ -199,7 +210,8 @@ const Books: BOOKS = [
         20,
         false,
         braveNewImg,
-        [Tags.LIT]
+        [Tags.LIT],
+        "https://en.wikipedia.org/wiki/Brave_New_World"
     ),
     BookFactory(
         generateUniqueID(bookIDs),
@@ -212,7 +224,8 @@ const Books: BOOKS = [
         20,
         true,
         leisureBasisImg,
-        [Tags.POLITICS, Tags.ETHICS]
+        [Tags.POLITICS, Tags.ETHICS],
+        "https://catholicexchange.com/on-leisure-the-basis-of-culture"
     ),
     BookFactory(
         generateUniqueID(bookIDs),
@@ -225,7 +238,8 @@ const Books: BOOKS = [
         20,
         true,
         nicomacheanImg,
-        [Tags.ETHICS]
+        [Tags.ETHICS],
+        "https://en.wikipedia.org/wiki/Nicomachean_Ethics"
     ),
 ];
 

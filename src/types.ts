@@ -11,6 +11,7 @@ export interface BOOK {
     imageRef: any;
     inCart: boolean;
     tags: string[];
+    wikiLink: string;
 }
 
 export enum Tags {
