@@ -27,7 +27,7 @@ const NavBar: React.FC = function () {
                     Shop
                 </button>
                 <button className="nav-box" onClick={navToCart}>
-                   Favorites 
+                    Favorites
                 </button>
             </div>
         </div>
