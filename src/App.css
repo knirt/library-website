@@ -58,6 +58,10 @@
         height: 60px;
         width: 80px;
     }
+    .nav-flex {
+        margin-right: 40px;
+        margin-left: 45px;
+    }
 }
 
 .nav-box:hover {
@@ -200,8 +204,8 @@
     .filter-subflex button {
         width: 88px;
         height: 40px;
-        margin-right: 0px;
-        margin-left: 0px;
+        margin-right: 1px;
+        margin-left: 1px;
     }
     #search-input {
         width: 170px;
@@ -214,6 +218,10 @@
     }
     .label-form {
         font-size: 15px;
+    }
+    .title-text {
+        margin-right: 20px;
+        margin-left: 35px;
     }
 }
 
@@ -284,6 +292,12 @@
     float: right;
 }
 
+@media only screen and (max-width: 480px) {
+    .book-image {
+        margin-left: 45px;
+    }
+}
+
 /* FOOTER STYLES */
 
 .footer-container {
@@ -322,11 +336,40 @@
 }
 
 .footer-img-box {
-    width: 1400px;
-    height: 400px;
+    width: 1350px;
+    height: 380px;
     border-style: solid;
     border-color: #28231d;
     border-width: 3px;
     background-color: #c3c3c3;
     text-align: center;
+}
+
+@media only screen and (max-width: 480px) {
+    #foot-line {
+        display: none;
+    }
+    #foot-line-top {
+        display: none;
+    }
+    .footer-img-box {
+        display: none;
+    }
+    .footer-container {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .footer-container {
+        text-align: center;
+    }
+    .footer-img-box {
+        width: 700px;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+    #foot-line {
+        display: none;
+    }
 }
